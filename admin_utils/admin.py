@@ -8,3 +8,7 @@ class HiddenAdminMixin(object):
         Return empty perms dict thus hiding the model from admin index.
         """
         return {}
+
+
+class HiddenAdmin(HiddenAdminMixin, admin.ModelAdmin):
+    pass
