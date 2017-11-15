@@ -1,3 +1,4 @@
 VERSION = '0.0.1'
 
-from .admin import HiddenAdmin
+from admin_utils.admin import HiddenAdmin
+from admin_utils.mixins import HiddenAdminMixin
