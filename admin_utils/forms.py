@@ -19,8 +19,9 @@ class UniqueRelatedForm(ModelForm):
 
         model = opts.model
 
-        try:
-            for field in model._meta.get_fields()
+
+        for field in model._meta.get_fields():
+            try:
                 if isinstance(field, ManyToManyField):
                     model = field.rel.to
                     field_name = field.name
@@ -37,8 +38,9 @@ class UniqueRelatedForm(ModelForm):
 
                     self.set_qs_for_field(field_name, qs)
 
-        except AttributeError:
-            pass
+            except AttributeError:
+                pass
+
 
     def get_available_m2m_qs(model, field_name):
         """
