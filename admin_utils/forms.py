@@ -72,4 +72,4 @@ class UniqueRelatedForm(ModelForm):
         return qs
 
     def set_qs_for_field(self, field_name, qs):
-        self.fields[field_name] = qs
+        self.fields[field_name].queryset = qs
