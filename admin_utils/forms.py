@@ -42,7 +42,7 @@ class UniqueRelatedForm(ModelForm):
                 pass
 
 
-    def get_available_m2m_qs(model, field_name):
+    def get_available_m2m_qs(self, model, field_name):
         """
         Returns a QuerySet containing only available models
         (i.e. not selected previously) for a ManyToManyField
@@ -56,7 +56,7 @@ class UniqueRelatedForm(ModelForm):
 
         return qs
 
-    def get_available_o2o_qs(model, field):
+    def get_available_o2o_qs(self, model, field):
         """
         Returns a QuerySet containing only available models
         (i.e. not selected previously) for a OneToOneField
@@ -71,5 +71,5 @@ class UniqueRelatedForm(ModelForm):
 
         return qs
 
-    def set_qs_for_field(field_name, qs):
+    def set_qs_for_field(self, field_name, qs):
         self.fields[field_name] = qs
