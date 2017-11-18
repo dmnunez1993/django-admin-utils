@@ -16,9 +16,11 @@ class AvailableManager(models.Manager):
             if include_qs:
                 if not obj.available and include_qs.filter(id=obj.id).count() == 0:
                     available_qs = available_qs.exclude(id=obj.id)
+                    print('excludes m2m')
             elif include_obj:
                 if not obj.available and obj.id != include_obj.id:
                     available_qs = available_qs.exclude(id=obj.id)
+                    print('excludes o2o')
             else:
                 if not obj.available:
                     available_qs = available_qs.exclude(id=obj.id)
