@@ -71,5 +71,5 @@ class UniqueRelatedForm(ModelForm):
 
         return qs
 
-    def set_qs_for_field(field_name, qs)
+    def set_qs_for_field(field_name, qs):
         self.fields[field_name] = qs
