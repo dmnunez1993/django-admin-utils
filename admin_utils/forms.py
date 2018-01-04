@@ -56,7 +56,7 @@ class UniqueRelatedForm(ModelForm):
 
         return qs
 
-    def get_available_o2o_qs(self, model, field):
+    def get_available_o2o_qs(self, model, field_name):
         """
         Returns a QuerySet containing only available models
         (i.e. not selected previously) for a OneToOneField
